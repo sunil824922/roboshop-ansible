@@ -1,27 +1,3 @@
-#  func_nodejs() {
-#    func_print_head "Configiure Nodejs repos"
-#    curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$log_file
-#    func_stat_check $?
-#
-#    func_print_head "Install Nodejs"
-#    yum install nodejs -y &>>$log_file
-#    func_stat_check $?
-#
-#    func_app_prereq
-#    func_stat_check $?
-#
-#    func_print_head "Install Nodejs dependencies"
-#    npm install &>>$log_file
-#    func_stat_check $?
-#
-#    func_schema_setup
-#    func_stat_check $?
-#
-#    func_systemd_setup
-#    func_stat_check $?
-#  }
-
-
 - name: Configuring NodeJS repos
   ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 

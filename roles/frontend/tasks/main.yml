@@ -31,9 +31,9 @@
     name: nginx
     enabled: true
 
-#- name: Import file beat
-#  ansible.builtin.import_role:
-#    name: elk
-#    tasks_from: filebeat
+- name: Import file beat
+  ansible.builtin.import_role:
+    name: elk
+    tasks_from: filebeat
 
 

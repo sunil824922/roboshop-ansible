@@ -10,7 +10,7 @@ filebeat.inputs:
 
 
 output.elasticsearch:
-  hosts: ["54.90.187.114"]
+  hosts: ["172.31.19.240:5044"]
 
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml

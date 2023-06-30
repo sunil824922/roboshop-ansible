@@ -13,8 +13,6 @@
     src: nginx.conf
     dest: /etc/nginx/nginx.conf
 
-
-
 - name: clean old app content
   ansible.builtin.file:
     path: /usr/share/nginx/html
@@ -36,10 +34,10 @@
     state: restarted
     name: nginx
     enabled: true
-#
-#- name: Import Filebeat
-#  ansible.builtin.import_role:
-#    name: elk
-#    tasks_from: filebeat
+
+- name: Import Filebeat
+  ansible.builtin.import_role:
+    name: elk
+    tasks_from: filebeat
 
 

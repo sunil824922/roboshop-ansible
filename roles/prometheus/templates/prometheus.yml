@@ -34,10 +34,12 @@ scrape_configs:
     relabel_configs:
       { % for label in labels % }
 
-      - source_labels: [ _meta_ec2_tag_{ { label.tag } }
-          - source_labels: [ _meta_ec2_tag_{ { label.tag } } ]
-              target_label: { { label.label } }
-              { %- endfor % }
+      - source_labels: [ _meta_ec2_tag_{ { label.tag } } ]
+          target_label: { { label.label } }
+          { %- endfor % }
+
+
+
 
 
 

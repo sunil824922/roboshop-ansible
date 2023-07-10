@@ -1,0 +1,12 @@
+groups:
+  - name: ec2-nodes
+    rules:
+      - alert: HighCPUUtilization
+        expr: 100- (avg by (component) (rate(node_cpu_seconds_total{mode="idle"}[1m]) * 100)) > 50
+        for: 1m
+        labels:
+          severity: page
+        annotations:
+          summary: High CPU usage
+
+
